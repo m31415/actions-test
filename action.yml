@@ -4,7 +4,7 @@ inputs:
     comment:
         description: "Comment"
         required: true
-        default: "Please provide a comment"
+        default: "Please provide comment"
     GITHUB_TOKEN:
         description: "Github token of the repository (automatically created by Github)"
         required: true
