@@ -5,6 +5,9 @@ inputs:
         description: "Comment"
         required: true
         default: "Please provide a comment"
+    GITHUB_TOKEN:
+        description: "Github token of the repository (automatically created by Github)"
+        required: true
 runs:
     using: "node12"
     main: "index.js"
