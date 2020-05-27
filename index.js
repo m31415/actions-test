@@ -6,7 +6,7 @@ async function run() {
         const message = core.getInput("message");
         const github_token = core.getInput("GITHUB_TOKEN");
 
-        const { context } = github;
+        const context = github.context;
         if (context.payload.pull_request == null) {
             core.setFailed("No pull request found.");
             return;
