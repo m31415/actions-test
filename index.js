@@ -1,6 +1,6 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
-import { readFile } from "fs";
+const fs = require("fs");
 
 async function run() {
     try {
