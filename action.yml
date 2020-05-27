@@ -1,10 +1,6 @@
 name: "PR comment"
 description: "Add comment to PR"
 inputs:
-    comment:
-        description: "Comment"
-        required: true
-        default: "Please provide comment"
     GITHUB_TOKEN:
         description: "Github token of the repository (automatically created by Github)"
         required: true

@@ -1,9 +1,16 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
+import { readFile } from "fs";
 
 async function run() {
     try {
-        const message = core.getInput("comment");
+        let content;
+        fs.readFile("./template.md", "utf8", (err, data) => {
+            if (err) {
+                core.setFailed("Could not read template");
+            }
+            content = data;
+        });
         const github_token = core.getInput("GITHUB_TOKEN");
 
         const context = github.context;
@@ -17,7 +24,7 @@ async function run() {
         const new_comment = octokit.issues.createComment({
             ...context.repo,
             issue_number: pull_request_number,
-            body: message,
+            body: content,
         });
     } catch (error) {
         core.setFailed(error.message);
