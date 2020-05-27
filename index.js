@@ -3,7 +3,7 @@ const github = require("@actions/github");
 
 async function run() {
     try {
-        const message = core.getInput("message");
+        const message = core.getInput("comment");
         const github_token = core.getInput("GITHUB_TOKEN");
 
         const context = github.context;
